@@ -4,4 +4,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="share">Share</string>
+    <string name="route1">Get on E40 in Woluwe-Saint-Lambert from Rue Belliard/Belliardstraat and N23,Head southeast on Bisschopsstraat Rue de lEvêque Continue onto Rue de lEcuyer Schildknaapsstraat</string>
+    <string name="route2">
+        Take Nationalestraat and Kronenburgstraat to Britselei/N113,
+        Head east on Eiermarkt toward Melkmarkt,
+        Eiermarkt turns right and becomes Schoenmarkt,
+        Continue onto Groenplaats,
+    </string>
+
 </resources>
