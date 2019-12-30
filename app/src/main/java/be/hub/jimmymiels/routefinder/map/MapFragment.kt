@@ -1,4 +1,4 @@
-package be.hub.jimmymiels.routefinder.Map
+package be.hub.jimmymiels.routefinder.map
 
 
 import android.os.Bundle

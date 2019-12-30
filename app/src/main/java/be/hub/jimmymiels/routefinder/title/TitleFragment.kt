@@ -1,8 +1,7 @@
-package be.hub.jimmymiels.routefinder.Title
+package be.hub.jimmymiels.routefinder.title
 
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -38,8 +37,8 @@ private lateinit var viewModel : TitleViewModel
 
         viewModel = ViewModelProviders.of(this).get(TitleViewModel::class.java)
 
-        Log.i("TitleFragment","Called ViewModelProviders.of")
-
+        binding.titleViewModel = viewModel
+        binding.lifecycleOwner = this
         // Navigation to fragment
 
         binding.searchButton.setOnClickListener{ v: View ->

@@ -1,7 +1,6 @@
-package be.hub.jimmymiels.routefinder.Route
+package be.hub.jimmymiels.routefinder.route
 
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment

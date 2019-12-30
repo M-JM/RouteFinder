@@ -1,9 +1,13 @@
-package be.hub.jimmymiels.routefinder.Title
+package be.hub.jimmymiels.routefinder.title
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class TitleViewModel : ViewModel() {
+
+    var searchTerm = MutableLiveData<String>()
+
 
     init {
         Log.i("TitleViewModel","TitleViewModel created!")
