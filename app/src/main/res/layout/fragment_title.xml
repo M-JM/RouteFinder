@@ -3,13 +3,14 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Title.TitleFragment">
+    tools:context=".title.TitleFragment">
 
-    <data>
-        <variable
-            name="place"
-            type="be.hub.jimmymiels.routefinder.Title.TitleData" />
-    </data>
+<data>
+    <variable
+        name="titleViewModel"
+        type="be.hub.jimmymiels.routefinder.title.TitleViewModel" />
+
+</data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/main"
@@ -21,7 +22,7 @@
         android:id="@+id/message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@={TitleData.place}"
+        android:text="Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -37,7 +38,7 @@
         android:layout_marginBottom="166dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="@={titleViewModel.searchTerm}"
         app:layout_constraintBottom_toTopOf="@+id/searchButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
