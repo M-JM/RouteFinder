@@ -3,6 +3,7 @@ package be.hub.jimmymiels.routefinder.route
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -41,7 +42,11 @@ class RouteFragment : Fragment() {
         viewModel.searchTerm.observe(this,object :Observer<Any>{
             override fun onChanged(t: Any?) {
                 textView.text = t!!.toString()
+                Toast.makeText(context,"test",Toast.LENGTH_SHORT).show()
+
             }
+
+
         })
 
         binding.newsearchButton.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_routeFragment_to_titleFragment))
