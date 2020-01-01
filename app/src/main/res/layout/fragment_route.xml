@@ -5,6 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".route.RouteFragment">
 
+    <data>
+        <variable
+            name="titleViewModel"
+            type="be.hub.jimmymiels.routefinder.title.TitleViewModel" />
+
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout2"
         android:layout_width="match_parent"
