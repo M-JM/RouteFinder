@@ -8,13 +8,10 @@ class TitleViewModel : ViewModel() {
 
     var searchTerm = MutableLiveData<String>()
 
+fun setSearchTerm(msg:String) {
+    searchTerm.setValue(msg)
+}
 
-    init {
-        Log.i("TitleViewModel","TitleViewModel created!")
-    }
 
-    override fun onCleared() {
-        super.onCleared()
-        Log.i("TitleViewModel","TitleViewModel destroyed!")
-    }
+
 }
