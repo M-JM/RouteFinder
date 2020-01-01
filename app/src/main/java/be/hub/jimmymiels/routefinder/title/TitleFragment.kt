@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import be.hub.jimmymiels.routefinder.R
 import be.hub.jimmymiels.routefinder.databinding.FragmentTitleBinding
+import kotlinx.android.synthetic.main.fragment_title.*
 
 /**
  * Fragment for the starting or title screen of the app
@@ -35,13 +36,14 @@ private lateinit var viewModel : TitleViewModel
         // get viewModel
         // to call methods in viewmodel add viewModel. to methods
 
-        viewModel = ViewModelProviders.of(this).get(TitleViewModel::class.java)
+        viewModel = ViewModelProviders.of(activity!!).get(TitleViewModel::class.java)
 
         binding.titleViewModel = viewModel
         binding.lifecycleOwner = this
         // Navigation to fragment
 
         binding.searchButton.setOnClickListener{ v: View ->
+            viewModel!!.setSearchTerm(editText.text.toString())
             v.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToRouteFragment())
         }
         return binding.root
