@@ -42,10 +42,14 @@ private lateinit var viewModel : TitleViewModel
         binding.titleViewModel = viewModel
         binding.lifecycleOwner = this
 
+
+
+
         // Navigation to fragment
 
         binding.searchButton.setOnClickListener{ v: View ->
             viewModel!!.setSearchTerm(editText.text.toString())
+            viewModel!!.setImage()
             v.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToRouteFragment())
         }
         return binding.root
