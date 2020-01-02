@@ -50,6 +50,7 @@ lateinit var  resultImage: ImageView
                 textView3.text = R.drawable.antwerpen.toString()
                 resultImage.setImageResource(viewModel.default)
 
+                
 
             }
         })
