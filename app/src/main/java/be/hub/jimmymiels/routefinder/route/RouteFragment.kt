@@ -14,12 +14,10 @@ import be.hub.jimmymiels.routefinder.R
 import be.hub.jimmymiels.routefinder.title.TitleViewModel
 import kotlinx.android.synthetic.main.fragment_route.*
 
-/**
- * A simple [Fragment] subclass.
- */
+
 class RouteFragment : Fragment() {
 
-    private lateinit var viewModel : TitleViewModel
+    private lateinit var viewModel: TitleViewModel
 
 
     override fun onCreateView(
@@ -27,23 +25,24 @@ class RouteFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
 
         val binding: FragmentRouteBinding = DataBindingUtil.inflate(
             inflater,
             R.layout.fragment_route,
             container,
-            false)
+            false
+        )
         viewModel = ViewModelProviders.of(activity!!).get(TitleViewModel::class.java)
         binding.titleViewModel = viewModel
         binding.lifecycleOwner = this
 
 
-        viewModel.searchTerm.observe(this,object :Observer<Any>{
+        viewModel.searchTerm.observe(this, object : Observer<Any> {
             override fun onChanged(t: Any?) {
                 textView.text = t!!.toString()
-                Toast.makeText(context,"test",Toast.LENGTH_SHORT).show()
-
+                Toast.makeText(context,viewModel.sendIntent.toString(), Toast.LENGTH_SHORT).show()
             }
 
 
@@ -57,21 +56,22 @@ class RouteFragment : Fragment() {
 
         return binding.root
 
-        //return inflater.inflate(R.layout.fragment_route, container, false)
-
-
     }
-// Inflate the Menu xml
+
+    // Inflate the Menu xml
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.menu, menu)
+        }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item!!.itemId) {
+            R.id.share -> startActivity(viewModel.getShareIntent())
+        }
+        return super.onOptionsItemSelected(item)
     }
-
-   // private fun getShareIntent() : Intent {
-   //     val shareIntent = Intent(Intent.ACTION_SEND)
-   //     shareIntent.setType("text/plain")
-
-   // }
-
-
 }
+
+
+
+
