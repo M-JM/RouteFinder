@@ -9,24 +9,28 @@ import be.hub.jimmymiels.routefinder.R
 
 class TitleViewModel : ViewModel() {
 
-
     var searchTerm = MutableLiveData<String>()
+    val list = mutableListOf(
+        "Take a left and turn \nTurn right and go straight",
+        "Take a right and go straight \nTake a left and go 500m ahead",
+        "Take the first right on the turnabout \nGo straight for 400m")
     var routes: Map<String, String> =
         mapOf("Brussels" to "Brussels to Schaarbeek", "Antwerpen" to "Antwerpen to Borgenhout")
     private val _route = MutableLiveData<String>()
     val route: LiveData<String>
         get() = _route
     var default = 0
-    val sendIntent: Intent = Intent(_route.value.toString()).apply {
-        action = Intent.ACTION_SEND
-        type = "text/plain"
-    }
 
     fun setSearchTerm(msg: String) {
         searchTerm.setValue(msg)
-        _route.value = routes.getValue(searchTerm.value.toString())
+        if(routes.containsKey(searchTerm.value.toString())) {
+            _route.value = routes.getValue(searchTerm.value.toString())
 
-    }
+                }
+        else {
+            _route.value = list.random()
+        }
+        }
 
     fun setImage() {
         default = when (searchTerm.value.toString()) {
@@ -34,8 +38,6 @@ class TitleViewModel : ViewModel() {
             "Brussels" -> R.drawable.brussels
             else -> R.drawable.share
         }
-
-
     }
 
     fun getShareIntent(): Intent {
