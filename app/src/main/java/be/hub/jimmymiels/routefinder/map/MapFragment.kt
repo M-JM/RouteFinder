@@ -15,16 +15,11 @@ import be.hub.jimmymiels.routefinder.R
 import be.hub.jimmymiels.routefinder.databinding.FragmentMapBinding
 import be.hub.jimmymiels.routefinder.title.TitleViewModel
 import kotlinx.android.synthetic.main.fragment_map.*
-import kotlinx.android.synthetic.main.fragment_route.*
-import kotlin.math.absoluteValue
 
-/**
- * A simple [Fragment] subclass.
- */
 class MapFragment : Fragment() {
 
-    private lateinit var viewModel : TitleViewModel
-lateinit var  resultImage: ImageView
+    private lateinit var viewModel: TitleViewModel
+    lateinit var resultImage: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,21 +31,21 @@ lateinit var  resultImage: ImageView
             inflater,
             R.layout.fragment_map,
             container,
-            false)
+            false
+        )
 
         viewModel = ViewModelProviders.of(activity!!).get(TitleViewModel::class.java)
         binding.titleViewModel = viewModel
         binding.lifecycleOwner = this
-        resultImage =binding.imageView
-        Toast.makeText(context,viewModel.searchTerm.toString(), Toast.LENGTH_LONG).show()
+        resultImage = binding.imageView
+        Toast.makeText(context, viewModel.searchTerm.toString(), Toast.LENGTH_LONG).show()
 
-        viewModel.searchTerm.observe(this,object : Observer<Any> {
+        viewModel.searchTerm.observe(this, object : Observer<Any> {
             override fun onChanged(t: Any?) {
                 textView4.text = t!!.toString()
                 textView3.text = R.drawable.antwerpen.toString()
                 resultImage.setImageResource(viewModel.default)
 
-                
 
             }
         })
@@ -66,10 +61,18 @@ lateinit var  resultImage: ImageView
 
         //return inflater.inflate(R.layout.fragment_map, container, false)
     }
+
     // Inflate the Menu xml
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item!!.itemId) {
+            R.id.share -> startActivity(viewModel.getShareIntent())
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }
