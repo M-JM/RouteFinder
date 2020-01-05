@@ -40,12 +40,12 @@ class RouteFragment : Fragment() {
         binding.lifecycleOwner = this
 
 
-        viewModel.searchTerm.observe(this, object : Observer<Any> {
+       /** viewModel.searchTerm.observe(this, object : Observer<Any> {
             override fun onChanged(t: Any?) {
                 textView.text = t!!.toString()
             }
         })
-
+*/
         binding.newsearchButton.setOnClickListener{v: View ->
             viewModel!!.setSearchTerm("")
             v.findNavController()

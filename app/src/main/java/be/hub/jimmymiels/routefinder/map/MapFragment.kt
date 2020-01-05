@@ -39,16 +39,15 @@ class MapFragment : Fragment() {
         binding.titleViewModel = viewModel
         binding.lifecycleOwner = this
         resultImage = binding.imageView
-
+        resultImage.setImageResource(viewModel.default)
         //Toast.makeText(context, viewModel.searchTerm.toString(), Toast.LENGTH_LONG).show()
 
-        viewModel.searchTerm.observe(this, object : Observer<Any> {
+       /* viewModel.searchTerm.observe(this, object : Observer<Any> {
             override fun onChanged(t: Any?) {
-                textView3.text = t!!.toString()
                 resultImage.setImageResource(viewModel.default)
             }
         })
-
+*/
         binding.newsearchButton.setOnClickListener{v: View ->
             viewModel!!.setSearchTerm("")
             v.findNavController()
