@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/titleFragment"
         android:name="be.hub.jimmymiels.routefinder.title.TitleFragment"
-        android:label="fragment_title"
+        android:label="Search new destination"
         tools:layout="@layout/fragment_title" >
         <action
             android:id="@+id/action_titleFragment_to_routeFragment"
@@ -21,7 +21,7 @@
     <fragment
         android:id="@+id/routeFragment"
         android:name="be.hub.jimmymiels.routefinder.route.RouteFragment"
-        android:label="fragment_route"
+        android:label="Destination Route"
         tools:layout="@layout/fragment_route" >
         <action
             android:id="@+id/action_routeFragment_to_mapFragment"
@@ -33,7 +33,7 @@
     <fragment
         android:id="@+id/mapFragment"
         android:name="be.hub.jimmymiels.routefinder.map.MapFragment"
-        android:label="fragment_map"
+        android:label="Destination Map"
         tools:layout="@layout/fragment_map" >
         <action
             android:id="@+id/action_mapFragment_to_titleFragment"

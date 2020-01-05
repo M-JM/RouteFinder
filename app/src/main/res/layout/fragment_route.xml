@@ -15,18 +15,35 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/design_default_color_primary_dark">
 
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="172dp"
-            android:layout_marginTop="85dp"
-            android:layout_marginEnd="180dp"
-            android:text="text"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="72dp"
+            android:background="@android:color/transparent"
+            android:text="@string/TitleRoute"
+            android:textColor="@color/PrimaryPurple"
+            android:textSize="@dimen/Title"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="60dp"
+            android:background="@android:color/transparent"
+            android:text="@string/TextStringDestination"
+            android:textColor="@color/PrimaryPurple"
+            android:textSize="@dimen/Title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,6 +53,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="130dp"
             android:text="@{titleViewModel.route}"
+            android:textColor="@color/PrimaryPurple"
+            android:textSize="@dimen/Title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -44,9 +63,11 @@
             android:id="@+id/newsearchButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="84dp"
-            android:layout_marginBottom="124dp"
-            android:text="New Search"
+            android:layout_marginStart="50dp"
+            android:layout_marginBottom="120dp"
+            android:text="@string/TextNewSearch"
+            android:textColor="@color/BackgroundPrimary"
+            android:textSize="@dimen/SmallerButton"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -54,14 +75,13 @@
             android:id="@+id/mapButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="59dp"
-            android:layout_marginEnd="92dp"
-            android:layout_marginBottom="124dp"
-            android:text="Map"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="120dp"
+            android:text="@string/ButtonMap"
+            android:textColor="@color/BackgroundPrimary"
+            android:textSize="@dimen/SmallerButton"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/newsearchButton" />
-
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
