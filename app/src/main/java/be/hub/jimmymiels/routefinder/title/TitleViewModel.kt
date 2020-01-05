@@ -20,7 +20,7 @@ class TitleViewModel : ViewModel() {
         "Take a right and go straight \nTake a left and go 500m ahead",
         "Take the first right on the turnabout \nGo straight for 400m")
     var routes: Map<String, String> =
-        mapOf("Brussels" to "Brussels to Schaarbeek", "Antwerpen" to "Antwerpen to Borgenhout")
+        mapOf("brussels" to "Brussels to Schaarbeek", "antwerpen" to "Antwerpen to Borgenhout")
     private val _route = MutableLiveData<String>()
     val route: LiveData<String>
         get() = _route
@@ -39,8 +39,8 @@ class TitleViewModel : ViewModel() {
 
     fun setSearchTerm(msg: String) {
         searchTerm.setValue(msg)
-        if(routes.containsKey(searchTerm.value.toString())) {
-            _route.value = routes.getValue(searchTerm.value.toString())
+        if(routes.containsKey(searchTerm.value.toString().toLowerCase())) {
+            _route.value = routes.getValue(searchTerm.value.toString().toLowerCase())
 
                 }
         else {
