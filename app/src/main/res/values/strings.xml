@@ -11,5 +11,7 @@
     <string name="ButtonMap">Show Map</string>
     <string name="TextShowRoute">Show Route</string>
     <string name="TextStringDestination">Your current destination is :</string>
+    <string name="TextHint">Please fill in destination</string>
+    <string name="TextImageDescription">Images</string>
 
 </resources>
