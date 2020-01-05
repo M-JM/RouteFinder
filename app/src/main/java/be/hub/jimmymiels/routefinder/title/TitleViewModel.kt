@@ -41,7 +41,6 @@ class TitleViewModel : ViewModel() {
         searchTerm.setValue(msg)
         if(routes.containsKey(searchTerm.value.toString().toLowerCase())) {
             _route.value = routes.getValue(searchTerm.value.toString().toLowerCase())
-
                 }
         else {
             _route.value = routelist.random()
@@ -67,6 +66,8 @@ class TitleViewModel : ViewModel() {
             .putExtra(Intent.EXTRA_TEXT, args)
         return shareIntent
     }
+
+
 }
 
 

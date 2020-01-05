@@ -3,6 +3,7 @@ package be.hub.jimmymiels.routefinder.title
 
 import android.os.Bundle
 import android.view.*
+import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
